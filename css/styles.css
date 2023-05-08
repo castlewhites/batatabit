@@ -1,0 +1,627 @@
+:root{
+    /* Colores */
+    --bitcoin-orange: #F7931A;
+    --soft-orange: #FFE9D5;
+    --secondary-blue: #1A9AF7;
+    --soft-blue: #E7F5FF;
+    --warm-black: #201E1C;
+    --black:#282623;
+    --grey: #BABABA;
+    --off-white:#FAF8F7;
+    --just-white: #FFFFFF;
+
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'DM Sans', sans-serif; 
+}
+
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  /* en vez de alinear cada elemento por separado como se hace en el video*/
+    width: 100%;
+    min-width: 320px;
+    height: 334px;
+    text-align: center;
+    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+}
+
+.header--title-container h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem; /*distancia entre lineas de texto*/
+    color: var(--just-white)
+}
+
+.header--title-container p{
+    margin-top: 25px;
+    font-size: 1.4rem;
+    font-weight: 500;  /*algo parecido a la negrita*/
+    line-height: 1.8rem;
+    color: var(--soft-orange)
+}
+
+header img{
+    width: 150px;
+    height: 24px;
+    margin-top: 40px;
+    /*align-self: center;  /*Alinear a un objeto que tenga un contenedor flex, pero en vez de este utilizo el align-items en el contenedor header.*/
+}
+
+.header--title-container {
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 218px;
+    margin-top: 50px;
+
+}
+
+.header--title-container .header--button{
+    position: absolute;  /*En absolute podemos usar, top, bottom, right, left */
+    left: calc(50% - 114px);  /*con calc se calcula en este caso la distancia left para centrar el boton: 114px es la mitad de 288px que es el ancho mínimo del contenedor padre. Ojo colocar espacios antes y despues del menos -*/
+    top: 270px;
+    display:block;
+    margin-top: 35px;
+    padding: 15px;
+    width: 229px;
+    height: 48px;
+    background-color: var(--off-white);
+    /*Sombra */
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);  /*0,16 es el difuminado*/
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none; /*para quitar el subrayado por el link*/
+    color: var(--black);
+}
+
+.header--button span{
+    display: inline-block;   /*span por default esta en in-line pero necesitamos cambiarlo por inline-block para ponerle imagen de fondo*/
+    width: 13px;
+    height: 8px;
+    margin-left: 10px;
+    background-image: url('./assets/icons/down-arrow.svg') /*../ es un comando que indica salir de esa carpeta y buscar */
+}
+
+main{
+    width: 100%;
+    min-width: 320px;
+    height: auto; /* para que el contenido del mismo defina la altura*/
+    background-color: var(--off-white); 
+}
+
+.main-exchange-container {
+    width: 100%;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.main-exchange-container--title{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    margin: 0 auto;   /*Para posicionar en el centro*/
+}
+
+.main-exchange-container .backgroundImg{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-image: url('./assets/img/Bitcoin.svg');
+    background-position: center; /* Buenas practicas para posicionar la imageny tener visibilidad del centro*/
+    background-repeat: no-repeat; /*Esto hace que la imagen cuando sea de tamaño pequeño no se repita para llenar el contenedor si se llega a estirar*/
+    background-attachment: fixed;
+}
+
+.main-exchange-container h2{
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--black);
+}
+
+.main-exchange-container p{
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    color: #757575;
+}
+
+.main-tables-container {     /*este lo cree para colocar scroll horizontal para las tablas (aun pendiente por configurar)*/
+    display: flex;
+    gap: 10px;
+    height: auto;
+    width: 80%;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto; 
+    padding: 0 20px;  /*para que no queden las tablas justo al borde*/
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
+.main-tables-container::-webkit-scrollbar {      /*Este sirve para darle estilo a la barra de scroll con colores*/ 
+    background-color: var(--soft-orange);
+    height: 3px;
+}
+
+.main-tables-container::-webkit-scrollbar-thumb {   /*Este sirve para darle estilo a la barra de scroll con colores*/
+    background-color: var(--bitcoin-orange);
+}
+
+.main-currency-table{       /*Desde aca empezamos a darle estilo a la tabla  de "Monedas"*/
+    width: 65%;
+    min-width: 235px;    /*235 antes*/
+    max-width: 500px;
+    height: 360px;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+    scroll-snap-align: center;
+}
+
+.main-currency-table .currency-table--title {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2.3rem;
+    color: var(--bitcoin-orange);
+}
+
+.currency-table--container {
+    width: 90%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: auto;
+}
+
+.currency-table--container table {
+    width: 100%;
+    height: 100%;
+}
+
+.currency-table--container td {
+    width: 50%;      /* Así posiciono ambas columnas de la tabla cada una ocupando un 50% del contenedor padre*/
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: var(--grey);
+    background-color: var(--just-white);
+}
+
+.currency-table--container .table__top-left {   /*Agragaremos el border radius en cada celda de las esquinas*/
+    border-radius: 15px 0 0 0;
+}
+
+.currency-table--container .table__top-right {
+    border-radius: 0 15px 0 0;
+}
+
+.currency-table--container .table__bottom-left {
+    border-radius: 0 0 0 15px;
+}
+
+.currency-table--container .table__bottom-right {
+    border-radius: 0 0 15px 0;
+}
+
+.currency-table--container .table__right {  
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.7rem;
+    color: #757575;
+}
+
+.currency-table--container .down {  /*Aca agregaremos el icono de flecha con tendencia a bajar de precio*/
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url("./assets/icons/trending-down.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.currency-table--container .up {  /*Aca agregaremos el icono de flecha con tendencia a subir de precio*/
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    background-image: url("./assets/icons/trending-up.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.currency-table--date {
+    width: 190px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: var(--soft-orange);
+    border-radius: 8px;
+}
+
+.currency-table--date p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    color: var(--warm-black);
+}
+
+.main-comission-table{       /*Desde aca empezamos a darle estilo a la tabla  de "Comisiones"*/
+    width: 70%;
+    min-width: 235px;         /*235 antes*/
+    max-width: 500px;
+    height: 360px;
+    margin: 0 auto;
+    font-family: "Inter", sans-serif;
+    scroll-snap-align: center;
+}
+
+.main-comission-table .comission-table--title {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2.3rem;
+    color: var(--secondary-blue);
+}
+
+.comission-table--container {
+    width: 90%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: auto;
+}
+
+.comission-table--container table {
+    width: 100%;
+    height: 100%;
+}
+
+.comission-table--container td {
+    width: 50%;      /* Así posiciono ambas columnas de la tabla cada una ocupando un 50% del contenedor padre*/
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    color: var(--grey);
+    background-color: var(--just-white);
+}
+
+.comission-table--container .table__top-left {   /*Agragaremos el border radius en cada celda de las esquinas*/
+    border-radius: 15px 0 0 0;
+}
+
+.comission-table--container .table__top-right {
+    border-radius: 0 15px 0 0;
+}
+
+.comission-table--container .table__bottom-left {
+    border-radius: 0 0 0 15px;
+}
+
+.comission-table--container .table__bottom-right {
+    border-radius: 0 0 15px 0;
+}
+
+.comission-table--container .table__right {  
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.7rem;
+    color: #757575;
+}
+
+.comission-table--date {
+    width: 190px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: var(--soft-blue);
+    border-radius: 8px;
+}
+
+.comission-table--date p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    color: var(--warm-black);
+}
+
+.main-product-detail{
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    padding: 20px 10px;
+    background-color: var(--warm-black);
+}
+
+.product-detail--batata-logo {
+    position: absolute;  /*Absolute busca el primer contenedor relative y se basa en este, en este caso como el primero es .main-product-detail, entonces se basa en este.*/
+    width: 40px;
+    height: 25px;
+    top: -10px; /*con este posiciono el icono entre los dos contenedores, que se salga del de abajo*/
+    left: calc(50% - 20px); /*si no colocamos -20px el icono se centra respecto al inicio del mismo, en lugar de la mitad (como su ancho es 40px entonces restamos la mitad para centrar)*/
+    background-image: url('./assets/icons/batata.svg')
+}
+
+.product-detail--title {
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;  
+    margin-top: 50px;
+    text-align: center;   
+}
+
+.product-detail--title h2 {
+   margin-bottom: 20px;
+   font-size: 2.4rem;
+   font-weight: bold;
+   line-height: 2.6rem;
+   color: var(--just-white);
+}
+
+.product-detail--title p{
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+.product-detail--card {
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    min-height: 150px; /*con min-height en vez de solo height evitamos problemas de overflow)*/
+    margin: 15px auto;    
+    padding: 15px;
+    background-color: var(--black);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
+}
+
+.product-detail--card .icon-card {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.clock {
+    background-image: url('./assets/icons/clock.svg');
+}
+
+.eye {
+    background-image: url('./assets/icons/eye.svg');
+}
+
+.money {
+    background-image: url('./assets/icons/dollar-sign.svg');
+}
+
+.check {
+    background-image: url('./assets/icons/check-circle.svg');
+}
+
+.product--card-title {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--just-white);
+}
+
+.product--card-body {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+.bitcoin-img-container {
+    width: 100%;
+    min-width: 320px;   
+    height: 50vh;
+    background-image: url('./assets/img/bitcoinbaby2x.jpg'); 
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;    /*para crear efecto parallax en la imagen*/
+}
+
+.bitcoin-img-container h2 {
+    padding-top: 60px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--just-white);
+    text-align: center;
+}
+
+.main-plans-container {
+    width: 100%;
+    min-width: 320px;
+    padding-bottom: 70px;
+    text-align: center;
+}
+
+.plans--title {
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.plans--title h2{
+    padding-top: 50px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--black);
+}
+
+.plans--title p {
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+}
+
+.plans-container--slider {  /*Aca vamos a ver como crear un scroll horizontal*/
+    display: flex;
+    /*gap: 50px; gap nos separa las tarjetas horizontalmente en el scroll o se puede reemplazar por un margin en cada tarjeta*/
+    height: 316px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain; 
+    scroll-snap-type: x proximity;
+}
+
+.plans-container--slider::-webkit-scrollbar {      /*Este sirve para darle estilo a la barra de scroll con colores*/ 
+    background-color: var(--soft-orange);
+    height: 3px;
+}
+
+.plans-container--slider::-webkit-scrollbar-thumb {   /*Este sirve para darle estilo a la barra de scroll con colores*/
+    background-color: var(--bitcoin-orange);
+}
+
+.plans-container-card {
+    position: relative;
+    scroll-snap-align: center; /*Para acabar de ajustar el scroll al centro de una tarjeta y no se quede entre dos de ellas */
+    width: 70%;
+    min-width: 190px;
+    max-width: 300px;
+    height: 250px;
+    margin: 50px 5px 0;      /*50px auto 0 era lo que teniamos antes pero en vez de usar gap en flex usaremos 20px*/
+    padding: 0 15px;
+    background-color: var(--just-white);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(89, 73, 30, 0.16);
+}
+
+.recommended {
+    position: absolute;
+    width: 120px;
+    height: 31px;
+    padding: 6px;
+    left: calc(50% - 60px);
+    top: -15px;
+    font-size: 1.2rem;
+    background-color: var(--bitcoin-orange);
+    border-radius: 8px;
+    color: var(--just-white);
+}
+
+.plan-card--title {
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: black;
+}
+
+.plan-card--price {
+    padding: 5px 0;
+    font-family: 'Inter';
+    font-size: 5.2rem;
+    font-weight: bold;
+    line-height: 5.3rem;
+    color: black;
+    letter-spacing: -3px;  /*con esta propiedad se juntan un poco más las letras*/
+}
+
+.plan-card--price span {
+    font-size: 1.2rem;
+    font-weight: 300;
+    vertical-align: 30px;   /*Con esta propiedad coloco el signo $ en la parte superior junto al número*/
+    letter-spacing: 1px; /*con esta misma propiedad alejo un poco las letras entre ellas*/
+}
+
+.plan-card--saving {
+    font-size: 1.2rem;
+    color: #757575;
+}
+
+.plan-card--ca {
+    width: 150px;
+    height: 48px;
+    margin-top: 20px;
+    background-color: #FAF8F7;
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif; 
+}
+
+.plan-card--ca span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('./assets/icons/orange-right-arrow.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: text-bottom;
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    height: 150px;
+    background-color: var(--bitcoin-orange);
+}
+
+footer section {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .left ul{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    list-style: none;
+}  
+
+.left li{
+    margin: 10px 0;
+}
+
+.left a{
+    text-decoration: none; /*para quitar el subrayado del link*/
+    color: var(--just-white);
+}

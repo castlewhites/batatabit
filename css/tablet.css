@@ -1,18 +1,22 @@
-.main-tables-container{
+.main-tables-container {
     display: flex;
-    width: auto;
+    width: 930 px;
     margin: 0 auto;
-    max-width: 620px;
 }
 
-.product-cards--container{
-    max-width: 620px;
+
+.product-cards--container {
+    display:flex;
+    flex-wrap: wrap;
+    width: 930px;   /*donde estamos buscando el cambio*/
+    margin: 0 auto;
 }
 
-.product-detail--card{
-    margin: 8px 8px;
+.plans-container--slider {    
+    justify-content: center;   /*a partir de los 930px se empiezan a centrar las tarjetas*/
+    overflow-x: hidden;         /*para quitar el scroll horizontal una vez la pantalla sea grande*/
 }
 
-.plans-container--card{
-    max-width: 236px;
+.main-tables-container {      
+    overflow-x: hidden;         /*para quitar el scroll horizontal una vez la pantalla sea grande*/
 }

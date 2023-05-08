@@ -91,7 +91,7 @@ header img{
     width: 13px;
     height: 8px;
     margin-left: 10px;
-    background-image: url('./assets/icons/down-arrow.svg') /*../ es un comando que indica salir de esa carpeta y buscar */
+    background-image: url('../assets/icons/down-arrow.svg') /*../ es un comando que indica salir de esa carpeta y buscar */
 }
 
 main{
@@ -121,10 +121,10 @@ main{
     height: 200px;
     margin: 0 auto;
     margin-bottom: 50px;
-    background-image: url('./assets/img/Bitcoin.svg');
+    background-image: url('../assets/img/Bitcoin.svg');
     background-position: center; /* Buenas practicas para posicionar la imageny tener visibilidad del centro*/
     background-repeat: no-repeat; /*Esto hace que la imagen cuando sea de tamaño pequeño no se repita para llenar el contenedor si se llega a estirar*/
-    background-attachment: fixed;
+
 }
 
 .main-exchange-container h2{
@@ -234,7 +234,7 @@ main{
     width: 15px;
     height: 15px;
     margin-left: 10px;
-    background-image: url("./assets/icons/trending-down.svg");
+    background-image: url("../assets/icons/trending-down.svg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -245,7 +245,7 @@ main{
     width: 15px;
     height: 15px;
     margin-left: 10px;
-    background-image: url("./assets/icons/trending-up.svg");
+    background-image: url("../assets/icons/trending-up.svg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -364,7 +364,7 @@ main{
     height: 25px;
     top: -10px; /*con este posiciono el icono entre los dos contenedores, que se salga del de abajo*/
     left: calc(50% - 20px); /*si no colocamos -20px el icono se centra respecto al inicio del mismo, en lugar de la mitad (como su ancho es 40px entonces restamos la mitad para centrar)*/
-    background-image: url('./assets/icons/batata.svg')
+    background-image: url('../assets/icons/batata.svg')
 }
 
 .product-detail--title {
@@ -415,19 +415,19 @@ main{
 }
 
 .clock {
-    background-image: url('./assets/icons/clock.svg');
+    background-image: url('../assets/icons/clock.svg');
 }
 
 .eye {
-    background-image: url('./assets/icons/eye.svg');
+    background-image: url('../assets/icons/eye.svg');
 }
 
 .money {
-    background-image: url('./assets/icons/dollar-sign.svg');
+    background-image: url('../assets/icons/dollar-sign.svg');
 }
 
 .check {
-    background-image: url('./assets/icons/check-circle.svg');
+    background-image: url('../assets/icons/check-circle.svg');
 }
 
 .product--card-title {
@@ -449,11 +449,11 @@ main{
     width: 100%;
     min-width: 320px;   
     height: 50vh;
-    background-image: url('./assets/img/bitcoinbaby2x.jpg'); 
+    background-image: url('../assets/img/bitcoinbaby2x.jpg'); 
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;    /*para crear efecto parallax en la imagen*/
+
 }
 
 .bitcoin-img-container h2 {
@@ -589,7 +589,7 @@ main{
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-image: url('./assets/icons/orange-right-arrow.svg');
+    background-image: url('../assets/icons/orange-right-arrow.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
